@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="noticiasResult">
+	<!-- resultmaps -->
+	<resultMap id="noticiaResult" class="com.usuario.empresa.web.administracion.entidades.Noticia">
+		<result property="id_noticia" 		column="ID_NOTICIA" />
+		<result property="titulo" 	 		column="TITULO" />
+		<result property="cuerpo" 			column="CUERPO" /> 
+		<result property="fuente" 			column="FUENTE" />  
+		<!--<result property="nombre_autor" 	column="NOMBRE_AUTOR" />  
+		<result property="apellido_autor"   column="APELLIDO_AUTOR" />--> 
+		<result property="tag1" 			column="TAG1" /> 
+		<result property="tag2" 			column="TAG2" /> 
+		<result property="tag3" 			column="TAG3" />
+	</resultMap>
+
+	<!-- sqls -->
+	<select id="getNoticiaid" parameterClass = "int" resultMap="noticiaResult">
+		SELECT N.ID_NOTICIA, N.TITULO, N.CUERPO, N.FUENTE,N.TAG1, N.TAG2, N.TAG3 
+		FROM noticia AS N
+		WHERE N.ID_NOTICIA= #value#;
+	</select> 
+	
+	<select id="getTitulo" parameterClass = "int" resultMap="noticiaResult">
+		SELECT N.TITULO
+		FROM noticia AS N
+		WHERE N.ID_NOTICIA= #value#;
+	</select> 
+	
+	<insert id="insertNoticia" parameterClass="com.usuario.empresa.web.administracion.entidades.Noticia">
+			INSERT NOTICIA (ID_NOTICIA, TITULO, CUERPO, FUENTE, TAG1, TAG2, TAG3 )
+			VALUES (#id_noticia#, #titulo#,#cuerpo#,#fuente#,#tag1#,#tag2#,#tag3#);
+	</insert> 
+	
+	<update id="updateNoticia" parameterClass="com.usuario.empresa.web.administracion.entidades.Noticia">
+		UPDATE NOTICIA SET TITULO=#titulo#, CUERPO=#cuerpo#, FUENTE=#fuente#,TAG1=#tag1#,TAG2=#tag2#,TAG3=#tag3# 
+		WHERE ID_NOTICIA=#id_noticia#;
+	</update> 
+	
+	<delete id="deleteNoticia" parameterClass="int">
+		DELETE FROM NOTICIA
+		WHERE ID_NOTICIA=#value#;
+	</delete>
+</sqlMap>

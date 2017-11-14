@@ -1,0 +1,273 @@
+<html>
+    <head> 
+		<!--<body onload="document.f.j_username.focus();">-->
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="css/estilo.css"/>
+      	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script type="text/javascript" src="js/cambiarPestanna.js"></script>        
+    </head>
+    <body onload="javascript:cambiarPestanna(pestanas,pestana1);">
+      <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+        <div class="contenedor">
+            <div class="titulo">Sistema de Gestión de Noticias e Indicadores Económicos</div> 
+            <img src="http://realrubio.es/sites/default/files/banner-nuestros-vinos.jpg" width="1000" height="200" alt="vinos" />
+            <div id="pestanas">
+                <ul id=lista>
+                    <li id="pestana1"><a href='javascript:cambiarPestanna(pestanas,pestana1);'>Inicio</a></li>
+                    <li id="pestana2"><a href='javascript:cambiarPestanna(pestanas,pestana2);'>Buscador de noticias</a></li>
+                    <li id="pestana3"><a href='javascript:cambiarPestanna(pestanas,pestana3);'>Calculadora</a></li>
+                    <li id="pestana4"><a href='javascript:cambiarPestanna(pestanas,pestana4);'>Conversor de divisas</a></li>
+                    <li id="pestana5"><a href='javascript:cambiarPestanna(pestanas,pestana5);'>Administración</a></li>
+                    <li id="pestana6"><a href='javascript:cambiarPestanna(pestanas,pestana6);'>Contacto</a></li>
+                </ul>
+            </div>
+            
+            
+       
+            <div id="contenidopestanas">
+                <div id="cpestana1"> 
+                	<a href="noticias/vernoticias1.xml"><img src = "img/noticia1.jpg" width = "1000" height = "200" alt = "vinos"/></a><br><br> 
+                	<a href="noticias/vernoticias2.xml"><img src = "img/noticia2.jpg" width = "240" height = "150" alt = "vinos1"/></a>
+                	<a href="noticias/vernoticias3.xml"><img src = "img/noticia3.jpg" width = "240" height = "150" alt = "vinos2"/></a>
+                	<a href="noticias/vernoticias4.xml"><img src = "img/noticia4.jpg" width = "240" height = "150" alt = "vinos3"/></a>
+                	<a href="noticias/vernoticias5.xml"><img src = "img/noticia5.jpg" width = "240" height = "150" alt = "vinos4"/></a><br>
+               		<a href="noticias/vernoticias6.xml"><font color="#ffffff">"La competencia vitivin&iacute;cola entre Chile y Argentina: ¿cu&aacute;ntas copas vendes?"</font></a><br><br>
+               		<a href="noticias/vernoticias7.xml"><font color="#ffffff">"Chile se consolida como el primer exportador de vino del nuevo mundo a Rusia"</font></a><br>
+                </div>
+                <div id="cpestana2"> 
+					Buscador:
+                    <input type='text' name='j_username' value='' />
+                    <input name="submit" type="submit">
+                </div>
+                <div id="cpestana3"> 
+					                <HEAD>
+					
+					<TITLE>Sistema de Gestión de Noticias e Indicadores Económicos</TITLE>
+					
+					<script language="LiveScript">
+<!-- 
+
+function addChar(input, character)
+{
+    if(input.value == null || input.value == "0")
+        input.value = character
+    else
+        input.value += character
+}
+
+function deleteChar(input)
+{
+    input.value = input.value.substring(0, input.value.length - 1)
+}
+
+function changeSign(input)
+{
+    // could use input.value = 0 - input.value, but let's show off substring
+    if(input.value.substring(0, 1) == "-")
+	input.value = input.value.substring(1, input.value.length)
+    else
+	input.value = "-" + input.value
+}
+
+function compute(form) 
+{
+	form.display.value = eval(form.display.value)
+}
+
+function square(form) 
+{
+	form.display.value = eval(form.display.value) * eval(form.display.value)
+}
+
+function checkNum(str) 
+{
+	for (var i = 0; i < str.length; i++) {
+		var ch = str.substring(i, i+1)
+		if (ch < "0" || ch > "9") {
+			if (ch != "/" && ch != "*" && ch != "+" && ch != "-" 
+				&& ch != "(" && ch!= ")") {
+				alert("invalid entry!")
+				return false
+			}
+		}
+	}
+	return true
+}
+
+<!--  -->
+	</script>
+					
+					
+					</HEAD>
+					
+					<BODY bgcolor="white">
+					
+					
+					<form>
+					<table border="5" align=center>
+					<tr align="center">
+					<td colspan = 4>
+					
+					<table border="3">
+					<tr>
+					<td align=center><input name="display" value="0" size=20></td>
+					</tr>
+					</table>
+					
+					</td>
+					</tr>
+					
+					<tr align=center>
+					<td>
+					<input type="button" value="    7    "
+					  onClick="addChar(this.form.display, '7')">
+					</td>
+					<td>
+					<input type="button" value="    8    "
+					  onClick="addChar(this.form.display, '8')">
+					</td>
+					<td>
+					<input type="button" value="    9    "
+					  onClick="addChar(this.form.display, '9')">
+					</td>
+					<td>
+					<input type="button" value="    /     "
+					  onClick="addChar(this.form.display, '/')">
+					</td>
+					</tr>
+					
+					<tr align=center>
+					<td>
+					<input type="button" value="    4    "
+					  onClick="addChar(this.form.display, '4')">
+					</td>
+					<td>
+					<input type="button" value="    5    "
+					  onClick="addChar(this.form.display, '5')">
+					</td>
+					<td>
+					<input type="button" value="    6    "
+					  onClick="addChar(this.form.display, '6')">
+					</td>
+					<td>
+					<input type="button" value="    *    "
+					  onClick="addChar(this.form.display, '*')">
+					</td>
+					</tr>
+					
+					<tr align=center>
+					<td>
+					<input type="button" value="    1    "
+					  onClick="addChar(this.form.display, '1')">
+					</td>
+					<td>
+					<input type="button" value="    2    "
+					  onClick="addChar(this.form.display, '2')">
+					</td>
+					<td>
+					<input type="button" value="    3    "
+					  onClick="addChar(this.form.display, '3')">
+					</td>
+					<td>
+					<input type="button" value="     -    " 
+					  onClick="addChar(this.form.display, '-')">
+					</td>
+					</tr>
+					
+					<tr align=center>
+					<td>
+					<input type="button" value="    0    "
+					  onClick="addChar(this.form.display, '0')"> 
+					</td>
+					<td>
+					<input type="button" value="     .    "
+					  onClick="addChar(this.form.display, '.')"> 
+					</td>
+					<td>
+					<input type="button" value="   +/-   "
+					  onClick="changeSign(this.form.display)">
+					</td>
+					<td>
+					<input type="button" value="    +    "
+					  onClick="addChar(this.form.display, '+')">
+					</td>
+					</tr>
+					
+					<tr align=center>
+					<td>
+					<input type="button" value="    (    "
+					  onClick="addChar(this.form.display, '(')"> 
+					</td>
+					<td>
+					<input type="button" value="     )    "
+					  onClick="addChar(this.form.display, ')')"> 
+					</td>
+					<td>
+					<input type="button" value="   ^    "
+					  onClick="if (checkNum(this.form.display.value))
+						{ square(this.form) }">
+					</td>
+					<td>
+					<input type="button" value="    Borrar   "
+					  onClick="deleteChar(this.form.display)">
+					</td>
+					</tr>
+					
+					<tr align=center>
+					<td colspan="2">
+					<input type="button" value="     =      " name="enter"
+					  onClick="if (checkNum(this.form.display.value))
+						{ compute(this.form) }">
+					</td>
+					<td colspan="2">
+					<input type="button" value="         C          "
+					  onClick="this.form.display.value = 0 ">
+					</td>
+					</tr>
+					</table>
+					</form>
+					
+					</body>			
+                
+                </div>
+                <div id="cpestana4">
+                	<center><iframe id="tmcmini" src="https://themoneyconverter.com/ES/MoneyConverter.aspx?from=EUR&amp;to=USD" style="width: 175px; height: 202px; border: none; background-color: #ffffff;" scrolling="no" marginwidth="0" marginheight="0"></iframe></center>
+                </div>
+                <div id="cpestana5">
+
+				<form name="f" action="j_spring_security_check" method="POST">
+					<table>
+						<tr>
+							<td>Usuario:</td>
+							<td><input type='text' name='j_username' value='' /></td>
+						</tr>
+						<tr>
+							<td>Contrase&ntilde;a:</td>
+							<td><input type='password' name='j_password'></td>
+						</tr>
+					
+						<tr>
+							<td><input type="checkbox" name="_spring_security_remember_me"></td>
+							<td>Recordar contrase&ntilde;a</td>
+						</tr>
+					
+						<tr>
+							<td colspan='2'><input name="submit" type="submit"></td>
+						</tr>
+						<tr>
+							<td colspan='2'><input name="reset" type="reset"></td>
+						</tr>
+					</table>
+					</form>
+				</body>
+                </div>
+                <div id="cpestana6">
+                	Nombre administrador: Juan Sepulveda <br><br> 
+                	Email: infovinas@gmail.com <br><br>
+                	Fono: 0422436469 <br><br>
+                </div>
+          
+            </div>
+        </div>
+    </body>
+</html>
