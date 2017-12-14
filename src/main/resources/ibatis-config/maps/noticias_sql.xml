@@ -7,38 +7,81 @@
 		<result property="titulo" 	 		column="TITULO" />
 		<result property="cuerpo" 			column="CUERPO" /> 
 		<result property="fuente" 			column="FUENTE" />  
-		<!--<result property="nombre_autor" 	column="NOMBRE_AUTOR" />  
-		<result property="apellido_autor"   column="APELLIDO_AUTOR" />--> 
+		<result property="fecha" 			column="FECHA" />  
+		<result property="url_imagen" 		column="URL_IMAGEN" /> 
+		<!--  <result property="nombre_autor" 	column="NOMBRE_AUTOR" />  
+		<result property="apellido_autor"   column="APELLIDO_AUTOR" />-->
 		<result property="tag1" 			column="TAG1" /> 
 		<result property="tag2" 			column="TAG2" /> 
-		<result property="tag3" 			column="TAG3" />
+		<result property="tag3" 			column="TAG3" /> 
 	</resultMap>
 
 	<!-- sqls -->
 	<select id="getNoticiaid" parameterClass = "int" resultMap="noticiaResult">
-		SELECT N.ID_NOTICIA, N.TITULO, N.CUERPO, N.FUENTE,N.TAG1, N.TAG2, N.TAG3 
+		SELECT N.ID_NOTICIA, N.TITULO, N.CUERPO,N.FUENTE,N.FECHA, N.URL_IMAGEN,N.TAG1,N.TAG2,N.TAG3
 		FROM noticia AS N
 		WHERE N.ID_NOTICIA= #value#;
+	</select>  
+	<select id="getNoticiaTag" parameterClass = "String" resultMap="noticiaResult">
+		SELECT N.ID_NOTICIA,N.TITULO, N.CUERPO, N.FUENTE,N.FECHA, N.URL_IMAGEN,N.TAG1,N.TAG2,N.TAG3
+		FROM noticia AS N
+		WHERE N.TAG1 = #value# or N.TAG2 = #value# or N.TAG3 = #value# ORDER BY N.FECHA;
+	</select>  
+	<select id="getMaxId" resultMap="noticiaResult">
+		SELECT N.ID_NOTICIA,N.TITULO, N.CUERPO,N.FUENTE,N.FECHA, N.URL_IMAGEN,N.TAG1,N.TAG2,N.TAG3
+		FROM noticia AS N WHERE N.ID_NOTICIA = (SELECT MAX(C.ID_NOTICIA) FROM noticia AS C) ;
 	</select> 
 	
-	<select id="getTitulo" parameterClass = "int" resultMap="noticiaResult">
+	<!--  <select id="getTitulo" parameterClass = "int" resultMap="noticiaResult">
 		SELECT N.TITULO
 		FROM noticia AS N
 		WHERE N.ID_NOTICIA= #value#;
-	</select> 
+	</select> -->
 	
 	<insert id="insertNoticia" parameterClass="com.usuario.empresa.web.administracion.entidades.Noticia">
-			INSERT NOTICIA (ID_NOTICIA, TITULO, CUERPO, FUENTE, TAG1, TAG2, TAG3 )
-			VALUES (#id_noticia#, #titulo#,#cuerpo#,#fuente#,#tag1#,#tag2#,#tag3#);
+			INSERT NOTICIA (TITULO, CUERPO, FUENTE,FECHA, URL_IMAGEN,TAG1,TAG2,TAG3)
+			VALUES (#titulo#,#cuerpo#,#fuente#,#fecha#,#url_imagen#,#tag1#,#tag2#,#tag3#);
 	</insert> 
+	<update id="updateNoticiaTitulo" parameterClass="com.usuario.empresa.web.administracion.entidades.Noticia">
+		UPDATE NOTICIA SET TITULO=#titulo# 
+		WHERE ID_NOTICIA=#id_noticia#;
+	</update>   
+	<update id="updateNoticiaCuerpo" parameterClass="com.usuario.empresa.web.administracion.entidades.Noticia">
+		UPDATE NOTICIA SET CUERPO=#cuerpo#
+		WHERE ID_NOTICIA=#id_noticia#;
+	</update> 
+	<update id="updateNoticiaFuente" parameterClass="com.usuario.empresa.web.administracion.entidades.Noticia">
+		UPDATE NOTICIA SET FUENTE=#fuente#
+		WHERE ID_NOTICIA=#id_noticia#;
+	</update> 
+	<update id="updateNoticiaFecha" parameterClass="com.usuario.empresa.web.administracion.entidades.Noticia">
+		UPDATE NOTICIA SET FECHA=#fecha#
+		WHERE ID_NOTICIA=#id_noticia#;
+	</update> 
+	<update id="updateNoticiaUrl" parameterClass="com.usuario.empresa.web.administracion.entidades.Noticia">
+		UPDATE NOTICIA SET URL_IMAGEN=#url_imagen#
+		WHERE ID_NOTICIA=#id_noticia#;
+	</update> 
+	<update id="updateNoticiaTag1" parameterClass="com.usuario.empresa.web.administracion.entidades.Noticia">
+		UPDATE NOTICIA SET TAG1=#tag1#
+		WHERE ID_NOTICIA=#id_noticia#;
+	</update> 
+	<update id="updateNoticiaTag2" parameterClass="com.usuario.empresa.web.administracion.entidades.Noticia">
+		UPDATE NOTICIA SET TAG2=#tag2#
+		WHERE ID_NOTICIA=#id_noticia#;
+	</update> 
+	<update id="updateNoticiaTag3" parameterClass="com.usuario.empresa.web.administracion.entidades.Noticia">
+		UPDATE NOTICIA SET TAG3=#tag3#
+		WHERE ID_NOTICIA=#id_noticia#;
+	</update>
 	
-	<update id="updateNoticia" parameterClass="com.usuario.empresa.web.administracion.entidades.Noticia">
-		UPDATE NOTICIA SET TITULO=#titulo#, CUERPO=#cuerpo#, FUENTE=#fuente#,TAG1=#tag1#,TAG2=#tag2#,TAG3=#tag3# 
+	<!--<update id="updateNoticia" parameterClass="com.usuario.empresa.web.administracion.entidades.Noticia">
+		UPDATE NOTICIA SET TITULO=#titulo#, CUERPO=#cuerpo#, FUENTE=#fuente#,FECHA=#fecha#,URL_IMAGEN=#url_imagen#,TAG1=#tag1#,TAG2=#tag2#,TAG3=#tag3# 
 		WHERE ID_NOTICIA=#id_noticia#;
 	</update> 
 	
 	<delete id="deleteNoticia" parameterClass="int">
 		DELETE FROM NOTICIA
 		WHERE ID_NOTICIA=#value#;
-	</delete>
+	</delete>-->
 </sqlMap>

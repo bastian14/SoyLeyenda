@@ -6,6 +6,8 @@ public class Indicador {
     private boolean estado;
     private double valor;
 
+    public Indicador() {}
+    
     public Indicador(int id_indicador, String nombre, boolean estado, double valor) {
         this.id_indicador = id_indicador;
         this.nombre = nombre;
@@ -44,8 +46,5 @@ public class Indicador {
     public void setValor(double valor) {
         this.valor = valor;
     }
-    
-    
-    
     
 }

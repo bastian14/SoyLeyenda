@@ -47,5 +47,8 @@
 	</bean> 
 	<bean id="noticiasService" class="com.usuario.empresa.web.administracion.servicios.NoticiaService">
 		<property name="sqlMapClient" ref="sqlMap" />
+	</bean> 
+	<bean id="indicadoresService" class="com.usuario.empresa.web.administracion.servicios.IndicadorService">
+		<property name="sqlMapClient" ref="sqlMap" />
 	</bean>
 </beans>

@@ -12,7 +12,7 @@
         <div class="contenedor">
             <div class="titulo">Sistema de Gesti&oacute;n de Noticias e Indicadores Econ&oacute;micos</div> 
             <img src="http://realrubio.es/sites/default/files/banner-nuestros-vinos.jpg" width="1000" height="200" alt="vinos" />
-            <a href="administracion.html"><font color="#ffffff">"Administrar Noticias e Indicadores"</font></a>
+            <a href="administracion.html.ftl"><font color="#ffffff">"Administrar Noticias e Indicadores"</font></a>
             <div id="pestanas">
                 <ul id="lista">
                     <li id="pestana1"><a href='javascript:cambiarPestanna(pestanas,pestana1);'>Inicio</a></li>
@@ -29,13 +29,17 @@
                 	<a href="noticias/vernoticias3.xml"><img src = "img/noticia3.jpg" width = "240" height = "150" alt = "vinos2"/></a>
                 	<a href="noticias/vernoticias4.xml"><img src = "img/noticia4.jpg" width = "240" height = "150" alt = "vinos3"/></a>
                 	<a href="noticias/vernoticias5.xml"><img src = "img/noticia5.jpg" width = "240" height = "150" alt = "vinos4"/></a><br>
-               		<a href="noticias/vernoticias6.xml"><font color="#ffffff">"La competencia vitivin&iacute;cola entre Chile y Argentina: ¿cu&aacute;ntas copas vendes?"</font></a><br><br>
+               		<a href="noticias/vernoticias6.xml"><font color="#ffffff">"La competencia vitivin&iacute;cola entre Chile y Argentina: ¿cuántas copas vendes?"</font></a><br><br>
                		<a href="noticias/vernoticias7.xml"><font color="#ffffff">"Chile se consolida como el primer exportador de vino del nuevo mundo a Rusia"</font></a><br>
                 </div>
                 <div id="cpestana2"> 
-					Buscador:
-                    <input type='text' name='j_username' value='' />
-                    <input name="submit" type="submit">
+					Buscar por Tag:<br>  
+				<form action="./noticias/buscarnoticia.xml" method="POST">
+	
+                    <input type='text' name="tag" value='' /> 
+     
+                    <td colspan='2'><input id="busca" type="submit" value="Buscar"></td><br> 
+                </form>      
                 </div>
                 <div id="cpestana3">
 				<HEAD>

@@ -8,7 +8,8 @@
 	<bean name="/inicio.xml"		class="com.usuario.empresa.web.administracion.controladores.InicioController" />
 	<bean name="/usuarios/*.xml" 	class="com.usuario.empresa.web.administracion.controladores.UsuarioController" />
 	<bean name="/noticias/*.xml" 	class="com.usuario.empresa.web.administracion.controladores.NoticiaController" />
-
+	<bean name="/indicadores/*.xml" class="com.usuario.empresa.web.administracion.controladores.IndicadorController" />
+	
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
 		<property name="cache" value="true" />

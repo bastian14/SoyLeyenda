@@ -1,4 +1,5 @@
 C:\proyectos\administracion\src\main\java\com\usuario\empresa\web\administracion\controladores\InicioController.java
+C:\proyectos\administracion\src\main\java\com\usuario\empresa\web\administracion\servicios\IndicadorService.java
 C:\proyectos\administracion\src\main\java\com\usuario\empresa\web\administracion\servicios\NoticiaService.java
 C:\proyectos\administracion\src\main\java\com\usuario\empresa\web\administracion\servicios\ServiceImpl.java
 C:\proyectos\administracion\src\main\java\com\usuario\empresa\web\administracion\controladores\NoticiaController.java
@@ -7,4 +8,5 @@ C:\proyectos\administracion\src\main\java\com\usuario\empresa\web\administracion
 C:\proyectos\administracion\src\main\java\com\usuario\empresa\web\administracion\entidades\Noticia.java
 C:\proyectos\administracion\src\main\java\com\usuario\empresa\web\administracion\servicios\UsuarioService.java
 C:\proyectos\administracion\src\main\java\com\usuario\empresa\web\administracion\controladores\UsuarioController.java
+C:\proyectos\administracion\src\main\java\com\usuario\empresa\web\administracion\controladores\IndicadorController.java
 C:\proyectos\administracion\src\main\java\com\usuario\empresa\web\administracion\entidades\Indicador.java

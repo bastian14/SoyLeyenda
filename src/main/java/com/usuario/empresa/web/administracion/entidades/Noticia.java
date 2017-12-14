@@ -12,9 +12,7 @@ public class Noticia {
     private String tag1;
     private String tag2;
     private String tag3;
-    //private String nombre_autor;
-    //private String apellido_autor; 
-    
+        
     public Noticia() {}
 
     public Noticia(int id_noticia, String titulo, String cuerpo, Date fecha, String fuente, String url_imagen, String tag1, String tag2, String tag3) {
@@ -27,8 +25,7 @@ public class Noticia {
         this.tag1 = tag1;
         this.tag2 = tag2;
         this.tag3 = tag3;
-        //this.nombre_autor = nombre_autor;
-        //this.apellido_autor = apellido_autor;
+        
     }
 
     public int getId_noticia() {
@@ -75,7 +72,7 @@ public class Noticia {
         return url_imagen;
     }
 
-    public void setUrl_imagen(String url_imagen) {
+   public void setUrl_imagen(String url_imagen) {
         this.url_imagen = url_imagen;
     }
 
@@ -103,22 +100,6 @@ public class Noticia {
         this.tag3 = tag3;
     }
 
-    /*public String getNombre_autor() {
-        return nombre_autor;
-    }
-
-    public void setNombre_autor(String nombre_autor) {
-        this.nombre_autor = nombre_autor;
-    }
-
-    public String getApellido_autor() {
-        return apellido_autor;
-    }
-
-    public void setApellido_autor(String apellido_autor) {
-        this.apellido_autor = apellido_autor;
-    }
-    */
-    
+       
     
 }

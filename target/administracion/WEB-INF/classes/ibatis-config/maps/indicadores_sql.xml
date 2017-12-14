@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="indicadoresResult">
+	<!-- resultmaps -->
+	<resultMap id="noticiaResult" class="com.usuario.empresa.web.administracion.entidades.Indicador">
+		<result property="id_indicador" 		column="ID_INDICADOR" />
+		<result property="nombre" 	 			column="NOMBRE" />
+		<result property="estado" 				column="ESTADO" />  
+		<result property="valor" 				column="VALOR" />  
+	</resultMap>
+
+	<!-- sqls -->
+		<insert id="insertIndicador" parameterClass="com.usuario.empresa.web.administracion.entidades.Indicador">
+			INSERT INDICADOR (ID_INDICADOR,NOMBRE,ESTADO,VALOR)
+			VALUES (#id_indicador#,#nombre#,#estado#,#valor#);
+	</insert>  
+	<!--<update id="updateIndicador" parameterClass="com.usuario.empresa.web.administracion.entidades.Indicador">
+		UPDATE INDICADOR SET NOMBRE=#nombre#,VALOR=#valor#
+		WHERE ID_INDICADOR=#id_indicador#;
+	</update>--> 
+	<update id="updateValor" parameterClass="com.usuario.empresa.web.administracion.entidades.Indicador">
+		UPDATE INDICADOR SET VALOR=#valor#
+		WHERE ID_INDICADOR=#id_indicador#;
+	</update> 
+	<update id="updateNombre" parameterClass="com.usuario.empresa.web.administracion.entidades.Indicador">
+		UPDATE INDICADOR SET NOMBRE=#nombre#
+		WHERE ID_INDICADOR=#id_indicador#;
+	</update>
+</sqlMap>
